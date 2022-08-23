@@ -1,0 +1,8 @@
+{
+  "kubernetes_host": "https://10.96.0.1:443",
+  "bound_service_account_names": "internal-app",
+  "bound_service_account_namespaces": ["vault"],
+  "policies": ["internal-app"],
+  "max_ttl": 1800000
+
+}

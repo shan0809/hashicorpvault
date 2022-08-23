@@ -1,0 +1,47 @@
+
+for i in coke fanta pepsi dietcoke thumpsup
+do
+curl -k --header "X-Vault-Token: hvs.GRKrwGxQoPgE2FFWUL9n3RSy" --request POST --data '{"password": "'"$i"'", "token_policies": ["secret-createdvisCLI"]}' http://20.84.239.35:8200/v1/auth/userpass/users/$i
+done
+
+
+
+curl -k --header "X-Vault-Token: hvs.9XAvZxVhLsdLbXcVRn6LPt3I" --request POST --data @payload.json http://20.103.215.34:8200/v1/auth/userpass/login/coke
+
+curl -k --header "X-Vault-Token: hvs.9XAvZxVhLsdLbXcVRn6LPt3I" --request LIST  http://20.103.215.34:8200/v1/auth/userpass/users
+
+
+curl -k --header "X-Vault-Token: hvs.fix6NmFqLuWAezZp4LIUMaWS" --data '{"type": "kubernetes"}' --request POST  http://localhost:8200/v1/sys/auth/kubernetes
+
+curl -k --header "X-Vault-Token: hvs.fix6NmFqLuWAezZp4LIUMaWS" --data @k8sauth.json --request POST  http://localhost:8200/v1/auth/kubernetes/config
+
+
+ curl -k --header "X-Vault-Token: hvs.fix6NmFqLuWAezZp4LIUMaWS" --request POST --data '{"type": "kubernetes"}' https://localhost:8200/v1/sys/auth/kubernetes
+
+
+curl -k --header "X-Vault-Token: hvs.fix6NmFqLuWAezZp4LIUMaWS" --data @k8sauth.json --request POST  http://localhost:8200/v1/auth/kubernetes/role/internal-app
+
+
+curl -k --header "X-Vault-Token: hvs.GRKrwGxQoPgE2FFWUL9n3RSy" --data @githubpayload.json http://20.84.239.35:8200/v1/auth/github/config
+
+
+curl -k --header "X:Vault-token: hvs.fix6NmFqLuWAezZp4LIUMaWS" --data @secretngine.json http://localhost:8200/v1/sys/mounts/kv
+
+curl -k --header "X-Vault-Token: hvs.fix6NmFqLuWAezZp4LIUMaWS" --request POST --data '{"type": "kubernetes"}' https://localhost:8200/v1/sys/auth/kubernetes
+
+
+curl -k --header "X:Vault-token: hvs.GRKrwGxQoPgE2FFWUL9n3RSy" --request POST --data @secret_policy_curl.json http://20.84.239.35:8200/v1/sys/policy/secret-createdvisCLI
+
+
+
+
+
+curl -k --header "X:Vault-token: hvs.fix6NmFqLuWAezZp4LIUMaWS" --request POST --data '{"type": "kubernetes"}' http://localhost:8200/v1/sys/auth/kubernetes
+
+hvs.fix6NmFqLuWAezZp4LIUMaWS
+
+
+
+
+curl -k --header "X:Vault-token: hvs.fix6NmFqLuWAezZp4LIUMaWS --request POST --data '{"type": "kubernetes"}' http://localhost:8200/v1/sys/auth/kubernetes"
+
