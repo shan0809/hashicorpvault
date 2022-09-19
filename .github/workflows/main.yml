@@ -37,4 +37,4 @@ jobs:
           url: http://52.236.0.26:8200
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
-            kv/data/test1 test
+            kv/data/test test
