@@ -37,4 +37,4 @@ jobs:
           url: http://52.236.0.26:8200
           token: ${{ secrets.VAULT_TOKEN }}
           secrets: |
-            secret/data/ci npmToken
+            kv/data/test test
